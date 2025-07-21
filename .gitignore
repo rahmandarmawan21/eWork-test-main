@@ -1,0 +1,23 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Robot Framework output
+output.xml
+log.html
+report.html
+results/
+
+# VSCode
+.vscode/
+
+# MacOS
+.DS_Store
+
+# Python virtualenv
+env/
+.venv/
+
+# Node modules
+node_modules/
