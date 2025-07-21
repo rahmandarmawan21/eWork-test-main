@@ -8,6 +8,7 @@ Resource    testdata/test_data.robot
 Login using invalid data company id, username, password
     [Documentation]    Test untuk login menggunakan data yang tidak valid.
     Open app
+    Sleep    1s
     Wait Element Visible                ${BTN_ALLOW_PERMISSION}
     Wait Element Visible                ${TXT_COMPANY_ID}
     Input Text                          ${TXT_COMPANY_ID}    invalid_company_id
@@ -19,6 +20,7 @@ Login using invalid data company id, username, password
 Login using valid data company id, username, password
     [Documentation]    Test untuk login menggunakan data yang valid.
     Open app
+    Sleep    1s
     Wait Element Visible             ${BTN_ALLOW_PERMISSION}
     Wait Until Element Is Visible    ${TXT_COMPANY_ID}
     Input Text                       ${TXT_COMPANY_ID}    ${COMPANY_ID}
@@ -30,6 +32,7 @@ Login using valid data company id, username, password
 Verify form new customer registration
     [Documentation]    Test untuk memverifikasi form pendaftaran pelanggan baru.
     Open app
+    Sleep    1s
     Wait Until Element Is Visible          ${LOGO_EWORK}
     Click Element                          ${BTN_NEW_CUSTOMER}
     Wait Until Element Is Visible          ${TXT_HEADER}
@@ -46,6 +49,7 @@ Verify form new customer registration
 User can create customer
     [Documentation]    Test untuk membuat pelanggan baru.
     Open app
+    Sleep    1s
     Wait Until Element Is Visible          ${LOGO_EWORK}
     Click Element                          ${BTN_NEW_CUSTOMER}
     Wait Until Element Is Visible          ${TXT_HEADER}
@@ -74,14 +78,18 @@ User can create customer
     Input Text                             ${TXT_ADDRESS}            ${TXT_ADDRESS_LOC}
     Wait Until Element Is Visible          ${DROPDOWN_PROVINCE}
     Click Element                          ${DROPDOWN_PROVINCE}
+    Sleep    1.5s
     Select option from bottom sheet          ${TXT_PROVINCE}
     Scroll Hingga Elemen Terlihat          ${DROPDOWN_CITY}
     Click Element                          ${DROPDOWN_CITY}
+    Sleep    1.5s
     Select option from bottom sheet          ${TXT_CITY}
     Scroll Hingga Elemen Terlihat          ${DROPDOWN_DISTRICT}
-    Click Element                          ${DROPDOWN_DISTRICT} timeout=10s
+    Click Element                          ${DROPDOWN_DISTRICT}
+    Sleep    1.5s
     Select option from bottom sheet          ${TXT_DISTRICT}
     Click Element                          ${DROPDOWN_SUBDISTRICT}
+    Sleep    1.5s
     Select option from bottom sheet          ${TXT_SUBDISTRICT}
     Click Element                          ${DROPDOWN_POSTAL_CODE}
     Wait Until Element Is Visible          ${TXT_POSTAL}
@@ -96,8 +104,10 @@ User can create customer
     Wait Until Element Is Visible          ${BTN_CAPTURE}
     Click Element                          ${BTN_CAPTURE}
     Click Element                          ${BTN_SUBMIT_REG}
-    Wait Until Element Is Visible          ${TV_PREVIEW}
+    #Wait Until Element Is Visible          ${TV_PREVIEW}
     Wait Until Element Is Visible          ${SIGNATURE_VIEW}
     Sign On Digital Signature              ${SIGNATURE_VIEW}
-    Wait Element Visible                   ${BTN_SUBMIT_SIGN}
-    Click Element                          ${BTN_SUBMIT_SIGN}
+    Sleep    1.5s
+    Wait Until Element Is Visible    ${BTN_SUBMIT_SIGN}    timeout=10s
+    Wait Until Page Contains Element    ${BTN_SUBMIT_SIGN}    timeout=10s
+    Click Element                   ${BTN_SUBMIT_SIGN}

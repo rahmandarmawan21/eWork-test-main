@@ -112,11 +112,13 @@ Select option from bottom sheet
     Click Element    ${option_locator}
 
 Sign On Digital Signature
-    [Documentation]    Melakukan tanda tangan digital pada elemen signature view.
-    [Arguments]    ${signature_id}
-    # Fokus pada elemen signature view
+    [Documentation]    Melakukan tanda tangan digital pada elemen signature view dengan tap dan swipe realistis.
+    [Arguments]    ${signature_id}=id.edot.ework:id/signature_view
     Wait Until Element Is Visible    ${signature_id}    timeout=10s
-    Swipe    200    800    800    800    300
-    Swipe    800    800    800    1200    300
-    Swipe    800    1200    200    1200    300
-    Swipe    200    1200    200    800    300
+    Click Element    ${signature_id}
+    Sleep    0.5s
+    # Swipe di area tengah signature view (koordinat contoh, sesuaikan dengan device)
+    Swipe    350    1300    700    1300    300
+    Swipe    700    1300    700    1500    300
+    Swipe    700    1500    350    1500    300
+    Swipe    350    1500    350    1300    300

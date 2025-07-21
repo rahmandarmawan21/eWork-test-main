@@ -39,7 +39,7 @@ ${BTN_SUBMIT}             id=id.edot.ework:id/btn_continue
 ${BTN_CAPTURE}            id=id.edot.ework:id/btn_capture
 ${TV_PREVIEW}            id=id.edot.ework:id/tv_preview
 
-${SIGNATURE_VIEW}    id=id.edot.ework:id/signature_view
-#${BTN_SUBMIT_REGs}    id=id.edot.ework:id/btn_submit
+${SIGNATURE_VIEW}       id=id.edot.ework:id/signature_view
 ${BTN_SUBMIT_REG}       xpath=//android.widget.Button[@resource-id="id.edot.ework:id/button_text" and @text="Submit"]
 ${BTN_SUBMIT_SIGN}       xpath=//android.widget.Button[@resource-id="id.edot.ework:id/button_text" and @text="Register"]
+${BTN_SUBMIT_YES}       xpath=//android.widget.Button[@resource-id="id.edot.ework:id/button_text" and @text="Yes"]
